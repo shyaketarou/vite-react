@@ -1,33 +1,60 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+
+function InputHello() {
+  const [text, setText] = useState("Hello world");
+
+  function handleChange(event) {
+    setText(event.target.value);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     
+      <p>{text}</p>
+      <input value={text} onChange={handleChange} />
+    </>
+  );
+}
+
+function App() {
+  const [a, seta]= useState(0)
+  const [b, setb]= useState(0)
+  const [result, setresult]= useState(null)
+  function handleA(event) {
+    seta(event.target.value);
+  }
+  function handleB(event) {
+    setb(event.target.value);
+  }
+
+
+  function add() {
+    setresult(parseInt(a) + parseInt(b))
+  }
+  function subtract() {
+    setresult(parseInt(a) - parseInt(b))
+  }
+  function multiply() {
+    setresult(parseInt(a) * parseInt(b))
+  }
+  function divide() {
+    setresult(parseInt(a) / parseInt(b))
+  }
+
+  return(
+    <>
+    <h1>ads</h1>
+    <p>{result}</p>
+    <input value={a} onChange={handleA}/>
+    <input value={b} onChange={handleB}/>
+    <button onClick={add}>Add</button>
+    <button onClick={subtract}>subtract</button>
+    <button onClick={multiply}>multiply</button>
+    <button onClick={divide}>divide</button>
     </>
   )
 }
