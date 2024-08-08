@@ -1,28 +1,28 @@
 import { useState } from "react";
 
  function InputHello() {
-  const [text, setText] = useState("Please find related articles on");
-  const [inputlinks, setinputlinks] = useState("")
+  const [inputlinks, setInputlinks] = useState("")
   const [output, setOutput] = useState("")
   const [outputlink, setOutputlink] = useState("")
-
+  const [pre, setPre] = useState("")
 
   function handleChange(event) {
-    setinputlinks(event.target.value);
+    setInputlinks(event.target.value);
   }
+
   function handleClick() {
     var linkarray= inputlinks.split(/\r?\n/)
     const mappedData = linkarray.map("link()")
+    alert('mk')
     console.log(linkarray)
-    
-    
+    setPre("ewqe")
   }
   return (
     <>
       <p>{inputlinks}</p>
       <textarea value={inputlinks} onChange={handleChange} />
       <button onClick={handleClick}>submit</button>
-      <p><i>{output} </i><a href={inputlinks}>(link)</a></p>
+      <p>Please find related articles on <i>{output} </i>(<a href={inputlinks}>link</a>)</p>
     </>
   );
 }
