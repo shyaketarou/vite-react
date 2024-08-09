@@ -5,24 +5,75 @@ import { useState } from "react";
   const [output, setOutput] = useState("")
   const [outputlink, setOutputlink] = useState("")
   const [pre, setPre] = useState("")
+  const [namedArray, setNamedArray] = useState([]) 
+//   const testArray= [
+//     'https://www.cna.com.tw/news/aipl/202408070192.aspx',
+//     'https://www.cdns.com.tw/articles/1061237',
+//     'https://www.chinatimes.com/realtimenews/20240807003746-260407?ctrack=pc_main_rtime_p02&chdtv',
+//     'https://www.ctee.com.tw/news/20240807701190-430101'
+// ]
+
+function convertToName(x) {
+  const arrayLength = x.length //4
+  const resultArray =[]
+  function pushToArray(i, n) {
+    if(i==arrayLength-1) {
+      resultArray.push(
+        {
+          name:"and " + n,
+          link: x[i],
+          key: i
+        })
+    } else {
+      resultArray.push(
+        {
+          name: n + ",",
+          link: x[i],
+          key: i
+        })
+    }
+  }
+  for (let i=0; i<arrayLength; i++) {
+      switch (true) {
+          case x[i].includes("cna"):
+              pushToArray(i, "Central News Agency")
+          break;
+          case x[i].includes("cdns"):
+            pushToArray(i, "China Daily News")
+          break;
+          case x[i].includes("chinatimes"):
+            pushToArray(i, "China Times")
+          break;
+          case x[i].includes("ctee"):
+            pushToArray(i, "Commercial Times")
+          break;
+      }
+  }
+  return resultArray
+}
 
   function handleChange(event) {
     setInputlinks(event.target.value);
   }
 
   function handleClick() {
-    var linkarray= inputlinks.split(/\r?\n/)
-    const mappedData = linkarray.map("link()")
-    alert('mk')
-    console.log(linkarray)
-    setPre("ewqe")
+    setNamedArray(convertToName(inputlinks.split("\n")))
+    console.log(namedArray)
   }
   return (
     <>
       <p>{inputlinks}</p>
       <textarea value={inputlinks} onChange={handleChange} />
       <button onClick={handleClick}>submit</button>
-      <p>Please find related articles on <i>{output} </i>(<a href={inputlinks}>link</a>)</p>
+      <p>
+      Please find related articles on
+      <span> </span>
+      {namedArray.map((key, link) => (
+        <>
+       <i>{link.name}</i> (<a href={link.link}>link {key}</a>)  <span> </span>
+        </>
+      ))}
+      </p>
     </>
   );
 }
