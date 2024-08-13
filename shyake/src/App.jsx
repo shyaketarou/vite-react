@@ -20,14 +20,14 @@ function convertToName(x) {
     if(i==arrayLength-1) {
       resultArray.push(
         {
-          name:"and " + n,
+          name:", and " + n,
           link: x[i],
           key: i
         })
     } else {
       resultArray.push(
         {
-          name: n + ",",
+          name: ", " + n,
           link: x[i],
           key: i
         })
@@ -67,10 +67,9 @@ function convertToName(x) {
       <button onClick={handleClick}>submit</button>
       <p>
       Please find related articles on
-      <span> </span>
       {namedArray.map((link) => (
         <>
-       <i>{link.name}</i> (<a href={link.link}>link</a>)  <span> </span>
+       <i>{link.name}</i> (<a href={link.link}>link</a>) 
         </>
       ))}
       </p>
