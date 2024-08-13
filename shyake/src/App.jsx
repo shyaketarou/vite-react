@@ -3,26 +3,36 @@ import { useState } from "react";
  function InputHello() {
   const [inputlinks, setInputlinks] = useState("")
   const [namedArray, setNamedArray] = useState([]) 
-//   const testArray= [
-//     'https://www.cna.com.tw/news/aipl/202408070192.aspx',
-//     'https://www.cdns.com.tw/articles/1061237',
-//     'https://www.chinatimes.com/realtimenews/20240807003746-260407?ctrack=pc_main_rtime_p02&chdtv',
-//     'https://www.ctee.com.tw/news/20240807701190-430101'
-// https://news.cnyes.com/news/id/5681315
-// ]
+  // test
+  // https://www.cna.com.tw/news/afe/202408090238.aspx
+  // https://www.chinatimes.com/realtimenews/20240809003845-260405?chdtv
+  // https://www.digitimes.com.tw/TECH/DT/N/SHWNWS.ASP?ID=0000699516_FIA6BW3X0MIZAK7TWGRLP
+  // https://news.ltn.com.tw/news/Kaohsiung/paper/1660973
+  // https://udn.com/news/story/7327/8151999
+  
 
 function convertToName(x) {
   const arrayLength = x.length 
   const resultArray =[]
   function pushToArray(i, n) {
-    if(i==arrayLength-1) {
+    if(i==0) {
       resultArray.push(
         {
-          name:", and " + n,
+          name: " " + n,
           link: x[i],
           key: i
         })
-    } else {
+    }
+    else if(i==arrayLength-1) {
+      resultArray.push(
+        {
+          name: n,
+          link: x[i],
+          key: i,
+          and: ", and "
+        })
+    } 
+    else {
       resultArray.push(
         {
           name: ", " + n,
@@ -125,6 +135,7 @@ function convertToName(x) {
 
   function handleClick() {
     setNamedArray(convertToName(inputlinks.split("\n")))
+    console.log(inputlinks.split("\n"))
     console.log(namedArray)
   }
   return (
@@ -136,7 +147,7 @@ function convertToName(x) {
       Please find related articles on
       {namedArray.map((link) => (
         <>
-       <i>{link.name}</i> (<a href={link.link}><font color="#0070C0">link</font></a>) 
+       {link.and}<i>{link.name}</i> (<a href={link.link}><font color="#0070C0">link</font></a>) 
         </>    
       ))}
       .
