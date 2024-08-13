@@ -14,33 +14,25 @@ import { useState } from "react";
 function convertToName(x) {
   const arrayLength = x.length 
   const resultArray =[]
-  function pushToArray(i, n) {
-    if(i==0) {
-      resultArray.push(
-        {
-          name: " " + n,
-          link: x[i],
-          key: i
-        })
-    }
-    else if(i==arrayLength-1) {
-      resultArray.push(
-        {
+////change pushToArray function to just push the necessary data into resultArray
+
+function pushToArray(i, n) {
+
+  resultArray.push(
+      {
           name: n,
           link: x[i],
           key: i,
-          and: ", and "
-        })
-    } 
-    else {
-      resultArray.push(
-        {
-          name: ", " + n,
-          link: x[i],
-          key: i
-        })
-    }
-  }
+      })
+
+}
+/////////
+
+
+
+
+
+/////now u might notice we keep doing resultArray.this(), resultArray.that(), and you're wondering if we could simplify it by just writing resultArray.this().that(), the answer is yes u can
   for (let i=0; i<arrayLength; i++) {
       switch (true) {
           case x[i].includes("anntw"):
@@ -126,6 +118,26 @@ function convertToName(x) {
           break;
       }
   }
+  ////we then sort it alphabetically
+resultArray.sort((a, b) => a.name.localeCompare(b.name));
+///////
+
+
+///// then this whole thing adds necessary commas to the resultArray
+resultArray.forEach((element, index) => {
+  if (index === 0) {
+      return;
+      //if it's the first one do nothing
+  } else if (index === arrayLength - 1) {
+      element.and = ", and "
+      // Add "and" to the last object
+
+  } else {
+      element.name = ", " + element.name 
+      //all other objects get a comma 
+  }
+});
+//////
   return resultArray
 }
 
@@ -144,7 +156,7 @@ function convertToName(x) {
       <textarea value={inputlinks} onChange={handleChange} />
       <button onClick={handleClick}>submit</button>
       <p>
-      Please find related articles on
+      Please find related articles on <span> </span>
       {namedArray.map((link) => (
         <>
        {link.and}<i>{link.name}</i> (<a href={link.link}><font color="#0070C0">link</font></a>) 
