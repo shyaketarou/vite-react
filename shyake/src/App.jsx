@@ -68,9 +68,9 @@ function convertToName(x) {
       <p>
       Please find related articles on
       <span> </span>
-      {namedArray.map((key, link) => (
+      {namedArray.map((link) => (
         <>
-       <i>{link.name}</i> (<a href={link.link}>link {key}</a>)  <span> </span>
+       <i>{link.name}</i> (<a href={link.link}>link</a>)  <span> </span>
         </>
       ))}
       </p>
