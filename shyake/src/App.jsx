@@ -2,9 +2,6 @@ import { useState } from "react";
 
  function InputHello() {
   const [inputlinks, setInputlinks] = useState("")
-  const [output, setOutput] = useState("")
-  const [outputlink, setOutputlink] = useState("")
-  const [pre, setPre] = useState("")
   const [namedArray, setNamedArray] = useState([]) 
 //   const testArray= [
 //     'https://www.cna.com.tw/news/aipl/202408070192.aspx',
