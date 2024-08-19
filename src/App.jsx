@@ -90,10 +90,16 @@ function pushToArray(i, n) {
             pushToArray(i, "Mirror Media")
           break;
           case x[i].includes("moneydj"):
-            pushToArray(i, "MoneyDJ")
+            pushToArray(i, "MoneyDJ")   
           break;
           case x[i].includes("newtalk"):
             pushToArray(i, "Newtalk")
+          break;
+          case x[i].includes("nownews"):
+            pushToArray(i, "NOWnews")
+          break;
+          case x[i].includes("pts"):
+            pushToArray(i, "PTS")
           break;
           case x[i].includes("rti"):
             pushToArray(i, "Radio Taiwan")
@@ -107,6 +113,9 @@ function pushToArray(i, n) {
           case x[i].includes("storm"):
             pushToArray(i, "The Storm Media")
           break;
+          case x[i].includes("tssdnews"):
+            pushToArray(i, "TSSDnews")
+          break;
           case x[i].includes("ttv"):
             pushToArray(i, "TTV")
           break;
@@ -115,6 +124,9 @@ function pushToArray(i, n) {
           break;
           case x[i].includes("udn"):
             pushToArray(i, "United Daily News")
+          break;
+          case x[i].includes("wealth"):
+            pushToArray(i, "Wealth Magazine")
           break;
       }
   }
