@@ -53,11 +53,14 @@ function pushToArray(i, n) {
           case x[i].includes("chinatimes"):
             pushToArray(i, "China Times")
           break;
+          case x[i].includes("cnyes"):
+            pushToArray(i, "cnYes")
+          break;
           case x[i].includes("ctee"):
             pushToArray(i, "Commercial Times")
           break;
-          case x[i].includes("cnyes"):
-            pushToArray(i, "cnYes")
+          case x[i].includes("ctimes"):
+            pushToArray(i, "CTIMES")
           break;
           case x[i].includes("cts"):
             pushToArray(i, "CTS News")
@@ -125,8 +128,14 @@ function pushToArray(i, n) {
           case x[i].includes("udn"):
             pushToArray(i, "United Daily News")
           break;
+          case x[i].includes("upmedia"):
+            pushToArray(i, "Up Media")
+          break;
           case x[i].includes("wealth"):
             pushToArray(i, "Wealth Magazine")
+          break;
+          case x[i].includes("ydn"):
+            pushToArray(i, "Youth Daily News")
           break;
       }
   }
