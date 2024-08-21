@@ -112,6 +112,11 @@ function pushToArray(i, n) {
           break;
           case x[i].includes("taisounds"):
             pushToArray(i, "Taisounds")
+          break;case x[i].includes("taisounds"):
+            pushToArray(i, "Taisounds")
+          break;
+          case x[i].includes("technews"):
+            pushToArray(i, "TechNews")
           break;
           case x[i].includes("storm"):
             pushToArray(i, "The Storm Media")
