@@ -142,6 +142,8 @@ function pushToArray(i, n) {
           case x[i].includes("ydn"):
             pushToArray(i, "Youth Daily News")
           break;
+          default:
+            alert('Invalid/unknown links');    
       }
   }
   ////we then sort it alphabetically
