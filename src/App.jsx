@@ -59,6 +59,9 @@ function pushToArray(i, n) {
           case x[i].includes("ctee"):
             pushToArray(i, "Commercial Times")
           break;
+          case x[i].includes("cool3c"):
+            pushToArray(i, "Cool3C")
+          break;
           case x[i].includes("ctimes"):
             pushToArray(i, "CTIMES")
           break;
@@ -104,7 +107,7 @@ function pushToArray(i, n) {
           case x[i].includes("pts"):
             pushToArray(i, "PTS")
           break;
-          case x[i].includes("rti"):
+          case x[i].includes("rti.org"):
             pushToArray(i, "Radio Taiwan")
           break;
           case x[i].includes("taipeitimes"):
@@ -142,8 +145,9 @@ function pushToArray(i, n) {
           case x[i].includes("ydn"):
             pushToArray(i, "Youth Daily News")
           break;
+          //debug 
           default:
-            alert('Invalid/unknown links');    
+            alert('Invalid/unknown links');   
       }
   }
   ////we then sort it alphabetically
