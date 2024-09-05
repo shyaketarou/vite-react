@@ -89,6 +89,12 @@ function pushToArray(i, n) {
           case x[i].includes("iknow"):
             pushToArray(i, "iKnow")
           break;
+          case x[i].includes("inside"):
+            pushToArray(i, "Inside")
+          break;
+          case x[i].includes("ithome"):
+            pushToArray(i, "iThome")
+          break;
           case x[i].includes("ltn"):
             pushToArray(i, "Liberty Times")
           break;
@@ -100,6 +106,9 @@ function pushToArray(i, n) {
           break;
           case x[i].includes("newtalk"):
             pushToArray(i, "Newtalk")
+          break;
+          case x[i].includes("nextapple"):
+            pushToArray(i, "NextApple")
           break;
           case x[i].includes("nownews"):
             pushToArray(i, "NOWnews")
@@ -141,6 +150,9 @@ function pushToArray(i, n) {
           break;
           case x[i].includes("wealth"):
             pushToArray(i, "Wealth Magazine")
+          break;
+          case x[i].includes("xmedia"):
+            pushToArray(i, "X Media")
           break;
           case x[i].includes("ydn"):
             pushToArray(i, "Youth Daily News")
