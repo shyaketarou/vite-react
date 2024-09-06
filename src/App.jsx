@@ -68,6 +68,9 @@ function pushToArray(i, n) {
           case x[i].includes("cts"):
             pushToArray(i, "CTS News")
           break;
+          case x[i].includes("ctwant"):
+            pushToArray(i, "CTWANT")
+          break;
           case x[i].includes("digitimes"):
             pushToArray(i, "DigiTimes")
           break;
@@ -85,6 +88,9 @@ function pushToArray(i, n) {
           break;
           case x[i].includes("hakkanews"):
             pushToArray(i, "Hakka News")
+          break;
+          case x[i].includes("hoomedia"):
+            pushToArray(i, "Hoo Media")
           break;
           case x[i].includes("iknow"):
             pushToArray(i, "iKnow")
