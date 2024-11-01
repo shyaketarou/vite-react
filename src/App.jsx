@@ -28,7 +28,7 @@ function pushToArray(i, n) {
 }
 /////////
 
-
+// Nov.11 updated
 /////now u might notice we keep doing resultArray.this(), resultArray.that(), and you're wondering if we could simplify it by just writing resultArray.this().that(), the answer is yes u can
   for (let i=0; i<arrayLength; i++) {
       switch (true) {
@@ -136,6 +136,9 @@ function pushToArray(i, n) {
           case x[i].includes("technews"):
             pushToArray(i, "TechNews")
           break;
+          case x[i].includes("buzzorange"):
+            pushToArray(i, "TechOrange")
+          break;
           case x[i].includes("storm"):
             pushToArray(i, "The Storm Media")
           break;
@@ -158,7 +161,7 @@ function pushToArray(i, n) {
             pushToArray(i, "Wealth Magazine")
           break;
           case x[i].includes("xmedia"):
-            pushToArray(i, "X Media")
+            pushToArray(i, "X Media") 
           break;
           case x[i].includes("ydn"):
             pushToArray(i, "Youth Daily News")
