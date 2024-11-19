@@ -95,6 +95,9 @@ function pushToArray(i, n) {
           case x[i].includes("inside"):
             pushToArray(i, "Inside")
           break;
+          case x[i].includes("investor"):
+            pushToArray(i, "Investor")
+          break;
           case x[i].includes("ithome"):
             pushToArray(i, "iThome")
           break;
